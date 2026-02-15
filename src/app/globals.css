@@ -1,23 +1,43 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary: #1e40af;
-  --primary-light: #3b82f6;
-  --secondary: #f59e0b;
-  --accent: #10b981;
-  --muted: #f3f4f6;
-  --border: #e5e7eb;
+/* ── RagSans Font ── */
+@font-face {
+  font-family: "RagSans";
+  src: url("/fonts/RagSans-1.4-Regular.woff2") format("woff2"),
+       url("/fonts/RagSans-1.4-Regular.woff") format("woff"),
+       url("/fonts/RagSans-1.4-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --muted: #1f2937;
-    --border: #374151;
-  }
+@font-face {
+  font-family: "RagSans";
+  src: url("/fonts/RagSans-1.4-SemiBold.woff2") format("woff2"),
+       url("/fonts/RagSans-1.4-SemiBold.woff") format("woff"),
+       url("/fonts/RagSans-1.4-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Guardian Brand Colors (from grdn.co.il) ── */
+:root {
+  --background: #f6f3ea;
+  --foreground: #1a2c43;
+  --primary: #1a2c43;
+  --primary-light: #253f60;
+  --accent: #5784be;
+  --accent-light: #749ac9;
+  --gold: #bca562;
+  --gold-light: #d8caa8;
+  --cream: #f6f3ea;
+  --cream-dark: #ede8db;
+  --muted: #f0ece3;
+  --border: #d8caa8;
+  --success: #2d8a56;
+  --error: #c53030;
+  --warning: #b7791f;
 }
 
 * {
@@ -33,7 +53,7 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Heebo", "Assistant", Arial, Helvetica, sans-serif;
+  font-family: "RagSans", "Heebo", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -41,4 +61,66 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* ── Guardian Custom Utilities ── */
+
+@utility bg-guardian-primary {
+  background-color: #1a2c43;
+}
+@utility bg-guardian-cream {
+  background-color: #f6f3ea;
+}
+@utility bg-guardian-cream-dark {
+  background-color: #ede8db;
+}
+@utility bg-guardian-gold {
+  background-color: #bca562;
+}
+@utility bg-guardian-accent {
+  background-color: #5784be;
+}
+@utility text-guardian-primary {
+  color: #1a2c43;
+}
+@utility text-guardian-cream {
+  color: #f6f3ea;
+}
+@utility text-guardian-gold {
+  color: #bca562;
+}
+@utility text-guardian-accent {
+  color: #5784be;
+}
+@utility border-guardian-gold {
+  border-color: #bca562;
+}
+@utility border-guardian-accent {
+  border-color: #5784be;
+}
+@utility border-guardian-cream-dark {
+  border-color: #ede8db;
+}
+@utility bg-guardian-primary-light {
+  background-color: #253f60;
+}
+@utility border-guardian-gold-light {
+  border-color: #d8caa8;
+}
+@utility bg-guardian-gold-light {
+  background-color: #d8caa8;
+}
+@utility text-guardian-gold-light {
+  color: #d8caa8;
+}
+
+/* ── Custom Utilities ── */
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
 }
